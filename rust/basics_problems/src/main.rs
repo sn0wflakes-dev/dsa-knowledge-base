@@ -1,5 +1,6 @@
 mod solution;
 fn main() {
+
 }
 
 #[allow(unused)]
@@ -29,5 +30,32 @@ mod test{
         assert_eq!(solution::sum_of_square::one_sum_of_square_fn(5), 55);
         assert_eq!(solution::sum_of_square::two_sum_of_square_fn(5), 55);
         assert_eq!(solution::sum_of_square::one_sum_of_square_fn(10), solution::sum_of_square::two_sum_of_square_fn(10));
+    }
+
+    #[test]
+    fn test_swipe_data() {
+        let output_artihmetic = "before : a = 10, b = 100 | after a = 100, b = 10";
+        let output_bitwise = "before : a = 80, b = 78 | after a = 78, b = 80";
+        assert_eq!(solution::swipe_data::arithmetic_swipe_data_fn(10, 100), output_artihmetic);
+        assert_eq!(solution::swipe_data::arithmetic_swipe_data_fn(80, 78), output_bitwise);
+    }
+
+    #[test]
+    fn test_close_number() {
+        assert_eq!(solution::close_number::one_close_number_fn(13, 4), 12);
+        assert_eq!(solution::close_number::two_close_number_fn(-15, 6), -18);
+    }
+
+    #[test]
+    fn test_dice() {
+        assert_eq!(solution::face_dice::face_dice_fn(4), 3);
+        assert_eq!(solution::face_dice::face_dice_fn(6), 1);
+        assert_eq!(solution::face_dice::face_dice_fn(5), 2);
+    }
+
+    #[test]
+    fn test_arithmetic_series() {
+        assert_eq!(solution::arithmetic_series::one_arithmetic_series(2, 3, 4), 5);
+        assert_eq!(solution::arithmetic_series::two_arithmetic_series(2, 3, 4), 5);
     }
 }
